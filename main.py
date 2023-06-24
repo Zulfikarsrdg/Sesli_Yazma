@@ -12,12 +12,11 @@ data = ""
 try:
     data = dinle.recognize_google(audio, language='tr-tr')
     data = data.lower()
-    print("Bunu Söyledin: " + data)
-
-    if "youtube" or "linkedin" or "github" or "facebook" or "twitter" or "twitch" or "instagram" in data:
-        search_query = data.replace("", "")
-        search_url = "https://www.google.com/search?q=" + search_query
+    if "youtube" in data or "linkedin" in data or "github" in data or "facebook" in data or "twitter" in data or "twitch" in data or "instagram" in data:
+        search_url = "https://www.google.com/search?q="+data+".com"
         webbrowser.open(search_url)
-
+    else:
+        print("Bunu Söyledin: " + data)
 except sr.UnknownValueError:
     print("Ne dediğini anlamadım, tekrarlar mısın?")
+
