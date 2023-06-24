@@ -14,7 +14,7 @@ try:
     data = data.lower()
     print("Bunu Söyledin: " + data)
 
-    if "youtube" or "hepsiburada" or "linkedin" or "github" or "facebook" or "twitter" or "twitch" in data:
+    if "youtube" or "linkedin" or "github" or "facebook" or "twitter" or "twitch" in data:
         search_query = data.replace("", "")
         search_url = "https://www.google.com/search?q=" + search_query
         webbrowser.open(search_url)
